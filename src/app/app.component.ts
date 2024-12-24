@@ -3,10 +3,37 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  // imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'password-gen';
+
+  password = '';
+  IncludeLetters = false;
+  IncludeNumbbers = false;
+  IncludeSymbols = false;
+  onChangeLetters(){
+
+    this.IncludeLetters = !this.IncludeLetters;
+
+  }
+
+
+  onChangeNumbers(){
+    this.IncludeNumbbers = !this.IncludeNumbbers;
+  }
+
+  onChangeSymbols(){
+    this.IncludeSymbols = !this.IncludeSymbols;
+  }
+
+  onButtonClicks(){
+    this.password = "MY PASSWORD";
+    console.log(this.IncludeLetters);
+  }
+
+
 }
+
+
